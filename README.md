@@ -1,3 +1,16 @@
+# Forked WebServiceStudio
+
+This is a fork from https://github.com/adnanmasood/WebServiceStudio
+
+### Version 2.2
+
+- Methods are sorted alphabetically by default. Set options value `SortMethods=false` to use the default sort order (menu : _Edit_ > _Options..._).
+- Arrays are created as `null` by default. Set options value `InitializeArraysAsNull=false` to always create a one element array (menu : _Edit_ > _Options..._).
+
+------------------------------------------------------------------------------
+
+From the original Readme:
+
 WebServiceStudio
 ================
 
