@@ -11,6 +11,19 @@ namespace WebServiceStudio
         private Font messageFont;
         private Font reqRespFont;
         private Font wsdlFont;
+        private bool sortMethods = true;
+
+
+		    [TypeConverter(typeof (BooleanConverter))]
+        public bool SortMethods
+        {
+            get
+            {
+                return sortMethods;
+            }
+            set { sortMethods = value; }
+        }
+		    
 
         [XmlIgnore, TypeConverter(typeof (FontConverter))]
         public Font MessageFont

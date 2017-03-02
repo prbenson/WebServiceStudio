@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -214,12 +215,15 @@ namespace WebServiceStudio
                             protocol2.CookieContainer = new CookieContainer();
                             protocol2.AllowAutoRedirect = true;
                         }
-                        foreach (MethodInfo info in type.GetMethods())
+						            var methods = type.GetMethods().Where(TreeNodeProperty.IsWebMethod);
+
+	                      if(Configuration.MasterConfig.UiSettings.SortMethods)
+	                      {
+		                        methods = methods.OrderBy(i => i.Name);
+												}
+												foreach (MethodInfo info in methods)
                         {
-                            if (TreeNodeProperty.IsWebMethod(info))
-                            {
-                                node.Nodes.Add(info.Name).Tag = info;
-                            }
+                            node.Nodes.Add(info.Name).Tag = info;
                         }
                     }
                 }
