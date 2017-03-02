@@ -70,14 +70,14 @@ namespace WebServiceStudio
         {
         }
 
-        protected static object CreateNewInstance(Type type)
+        protected static object CreateNewInstance(Type type, bool isInitial=false)
         {
             var obj2 = new Object();
             try
             {
                 if (type.IsArray)
                 {
-                    return Array.CreateInstance(type.GetElementType(), 1);
+	                return isInitial && Configuration.MasterConfig.UiSettings.InitializeArraysAsNull ? null : Array.CreateInstance(type.GetElementType(), 1);
                 }
                 if (type == typeof (string))
                 {

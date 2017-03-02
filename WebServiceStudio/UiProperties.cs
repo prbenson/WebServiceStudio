@@ -12,6 +12,7 @@ namespace WebServiceStudio
         private Font reqRespFont;
         private Font wsdlFont;
         private bool sortMethods = true;
+        private bool initializeArraysAsNull = true;
 
 
 		    [TypeConverter(typeof (BooleanConverter))]
@@ -24,6 +25,17 @@ namespace WebServiceStudio
             set { sortMethods = value; }
         }
 		    
+		    
+		    [TypeConverter(typeof (BooleanConverter))]
+        public bool InitializeArraysAsNull
+        {
+            get
+            {
+                return initializeArraysAsNull;
+            }
+            set { initializeArraysAsNull = value; }
+        }
+
 
         [XmlIgnore, TypeConverter(typeof (FontConverter))]
         public Font MessageFont

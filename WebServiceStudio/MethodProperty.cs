@@ -53,7 +53,7 @@ namespace WebServiceStudio
                     }
                     object val = (paramValues != null)
                         ? paramValues[i]
-                        : (isIn ? CreateNewInstance(parameterType) : null);
+                        : (isIn ? CreateNewInstance(parameterType, true) : null);
                     CreateTreeNodeProperty(base.GetIncludedTypes(parameterType), parameters[i].Name, val)
                         .RecreateSubtree(parentNode);
                 }
