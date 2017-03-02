@@ -100,7 +100,7 @@ namespace WebServiceStudio
             base.AcceptButton = buttonOk;
             base.CancelButton = buttonCancel;
             AutoScaleBaseSize = new Size(5, 13);
-            base.ClientSize = new Size(0x110, 0x12b);
+            base.ClientSize = new Size(0x210, 0x22b);
             base.Controls.AddRange(new Control[] {panelTopMain, panelBottomMain});
             base.Name = "OptionDialog";
             Text = "Options ";
