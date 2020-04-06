@@ -506,6 +506,7 @@ namespace WebServiceStudio
             CheckPoint(MessageType.Begin, "Generating WSDL");
             try
             {
+                System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 DiscoveryClientProtocol client = CreateDiscoveryClient();
                 ProcessLocalPaths(client, localPaths, schemas, descriptions);
                 ProcessRemoteUrls(client, urls, schemas, descriptions);
